@@ -1,3 +1,5 @@
+#horóscopo em interface gráfica
+
 import PySimpleGUI as psg
 
 def consultar_signo(dia, mes):
