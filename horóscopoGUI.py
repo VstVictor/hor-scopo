@@ -32,7 +32,7 @@ layout = [
     [psg.Text('Consultar Signo')],
     [psg.Text('Informe o Dia:'), psg.InputText(key='dia')],
     [psg.Text('Informe o Mês:'), psg.InputText(key='mes')],
-    [psg.Button('Consultar'), psg.Button('Sair')],
+    [psg.Button('Consultar'), psg.Button('Limpar'), psg.Button('Sair', button_color=('white', 'red'))],
     [psg.Text('', size=(20, 1), key='resultado')],
 ]
 
@@ -51,5 +51,10 @@ while True:
             janela['resultado'].update(f'Signo: {resultado}')
         except ValueError:
             psg.popup_error('Informe valores numéricos para Dia e Mês.')
+    elif evento == 'Limpar':
+        janela['dia'].update('')
+        janela['mes'].update('')
+        janela['resultado'].update('')
+        janela['dia'].set_focus()
 
 janela.close()
